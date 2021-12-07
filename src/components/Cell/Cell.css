@@ -1,0 +1,10 @@
+.cell {
+  background-color: beige;
+  border-radius: 0.1em;
+  box-shadow: 0 0.05em 0.25em 0 rgba(61, 54, 42, 0.8);
+  color: rgb(61, 54, 42);
+  font-size: clamp(4rem,14vw,18vh);
+  height: clamp(5rem,18vw,22vh);
+  text-shadow: 0 0 0.3em rgba(84, 63, 43, 0.7);
+  width: clamp(5rem,18vw,22vh);
+}

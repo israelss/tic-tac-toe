@@ -1,0 +1,10 @@
+.restart-button {
+  background-color: rgb(61, 54, 42);
+  border: none;
+  border-radius: 0.25em;
+  color: beige;
+  font-size: clamp(1rem,4vw,3rem);
+  outline:  beige solid 0.1em;
+  outline-offset: 0.25em;
+  padding: 0.7em;
+}

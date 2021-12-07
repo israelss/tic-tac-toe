@@ -1,0 +1,11 @@
+.indicator {
+  background-color: burlywood;
+  border-radius: 0.25em;
+  font-size: clamp(1rem,4vw,3rem);
+  padding: 0.5em;
+}
+
+.indicator span {
+  background-color: beige;
+  padding: 0.5em;
+}
