@@ -1,10 +1,9 @@
-function isAll(players, arr) {
-  const result = [];
-  players.forEach((player) => {
-    const playerExp = new RegExp(`^${player}$`, 'i');
-    result.push(arr.every((item) => item.match(playerExp)));
+function checkItems(arr) {
+  let winner;
+  arr.forEach((line) => {
+    if (!winner && line.every((cell) => cell === line[0])) winner = line[0];
   });
-  return result.some((item) => item);
+  return winner;
 }
 
 function columns(arr) {
@@ -29,30 +28,40 @@ function diagonals(matrix) {
   return [diagonalOne, diagonalTwo];
 }
 
-function lineHasWinner(table, players) {
-  return table.some((line) => isAll(players, line));
+function lineWinner(table) {
+  return checkItems(table);
 }
 
-function columnHasWinner(table, players) {
-  return columns(table).some((column) => isAll(players, column));
+function columnWinner(table) {
+  return checkItems(columns(table));
 }
 
-function diagonalHasWinner(table, players) {
-  return diagonals(table).some((diagonal) => isAll(players, diagonal));
+function diagonalWinner(table) {
+  return checkItems(diagonals(table));
 }
 
-function checkWinner(table, players) {
-  return lineHasWinner(table, players)
-    || columnHasWinner(table, players)
-    || diagonalHasWinner(table, players);
+function checkWinner(table) {
+  return lineWinner(table)
+    || columnWinner(table)
+    || diagonalWinner(table);
 }
 
 function checkDraw(table) {
   return table.every((line) => line.every((cell) => cell !== ''));
 }
 
-export function checkTableState(table, players) {
-  const hasWinner = checkWinner(table, players);
-  const isDraw = hasWinner ? false : checkDraw(table);
-  return [hasWinner, isDraw];
+export function checkTableState(table) {
+  const winner = checkWinner(table);
+  const isDraw = winner ? false : checkDraw(table);
+  return [winner, isDraw];
+}
+
+export function getSymbolsList() {
+  const upperA = 0x0041;
+  const upperZ = 0x005A;
+  const symbols = [];
+  for (let i = upperA; i <= upperZ; i += 0x1) {
+    symbols.push(String.fromCodePoint(i));
+  }
+  return symbols;
 }
