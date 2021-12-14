@@ -1,0 +1,26 @@
+.selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: burlywood;
+  border-radius: 0.25em;
+  font-size: clamp(1rem,4vw,3rem);
+  padding: 0.5em;
+}
+
+.player,
+.player > * {
+  border: none;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.selector :where(input, select) {
+  background-color: beige;
+  border: none;
+  border-radius: 0.25em;
+  color: rgb(61, 54, 42);
+  font-size: clamp(1rem,4vw,3rem);
+  padding: 0.5em;
+  min-width: 6ch;
+}
