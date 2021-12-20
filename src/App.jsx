@@ -93,6 +93,7 @@ function App() {
               { lastWinner && <LastWinnerIndicator winner={ lastWinner } /> }
               < Menu
                 changeTableSize={ changeTableSize }
+                tableSize={ tableSize }
                 changePlayers={ changePlayers }
                 players={ players }
                 startGame={ startGame }

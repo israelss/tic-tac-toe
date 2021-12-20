@@ -5,6 +5,7 @@ import './Menu.css';
 export const Menu = ({
   startGame,
   changeTableSize,
+  tableSize,
   addPlayer,
   removePlayer,
   changePlayers,
@@ -19,7 +20,10 @@ export const Menu = ({
         players={ players }
       />
 
-      <TableSizeSelector changeTableSize={ changeTableSize } />
+      <TableSizeSelector
+        changeTableSize={ changeTableSize }
+        tableSize={ tableSize }
+      />
 
       <button
         className='menu-button'
