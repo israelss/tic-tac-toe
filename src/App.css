@@ -5,7 +5,10 @@
   flex-direction: column;
   font-family: monospace;
   gap: 2rem;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  min-width: 320px;
+  min-height: 320px;
   justify-content: center;
   text-align: center;
 }

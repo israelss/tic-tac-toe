@@ -1,11 +1,13 @@
 .indicator {
   background-color: burlywood;
   border-radius: 0.25em;
-  font-size: clamp(1rem,4vw,3rem);
-  padding: 0.5em;
+  font-size: clamp(0.7rem,2vmin,2rem);
+  padding-inline: 0.5em;
 }
 
 .indicator span {
   background-color: beige;
+  line-height: 2;
   padding: 0.5em;
+  white-space: nowrap;
 }
